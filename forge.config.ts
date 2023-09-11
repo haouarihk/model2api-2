@@ -3,7 +3,9 @@ import { VitePlugin } from '@electron-forge/plugin-vite';
 import path from 'path';
 
 const config: ForgeConfig = {
-  packagerConfig: {},
+  packagerConfig: {
+    asar: true
+  },
   rebuildConfig: {},
   makers: [
     {

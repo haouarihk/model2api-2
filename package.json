@@ -27,6 +27,7 @@
     "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
     "@electron-forge/plugin-vite": "^6.4.2",
     "@electron-forge/publisher-github": "^6.4.2",
+    "@electron/asar": "^3.2.4",
     "@types/fluent-ffmpeg": "^2.1.21",
     "@types/mime-types": "^2.1.1",
     "@types/react-dom": "^18.2.7",
