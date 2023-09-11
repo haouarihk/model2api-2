@@ -30,7 +30,7 @@ const config: ForgeConfig = {
     {
       name: '@electron-forge/maker-rpm',
       config: {
-        bin: 'Electron Starter',
+        bin: 'model2API',
         icon: path.join(process.cwd(), 'main', 'build', 'icon.png'),
       }
     }
@@ -57,7 +57,24 @@ const config: ForgeConfig = {
         },
       ],
     }),
+    {
+      name: '@electron-forge/plugin-auto-unpack-natives',
+      config: {}
+    }
   ],
+
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'youwriteai',
+          name: 'model2api-2'
+        },
+        prerelease: true
+      }
+    }
+  ]
 };
 
 export default config;
