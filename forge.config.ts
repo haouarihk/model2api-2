@@ -17,7 +17,9 @@ const config: ForgeConfig = {
     {
       name: '@electron-forge/maker-dmg',
       config: {
-        bin: 'model2API'
+        format: 'ULFO',
+        name: 'model2API',
+        icon: path.join(process.cwd(), 'src/assets/icon.png'),
       }
     },
     {
