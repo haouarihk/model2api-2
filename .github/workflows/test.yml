@@ -1,12 +1,10 @@
 # .github/workflows/release.yml
 name: Release app
 
-on:
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   build:
-    permissions: write-all
     strategy:
       matrix:
         os:
@@ -29,7 +27,5 @@ jobs:
 
       - run: npm ci
 
-      - name: Publish app
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run publish
+      - name: Test app
+        run: npm run package
