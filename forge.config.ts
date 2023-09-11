@@ -25,7 +25,7 @@ const config: ForgeConfig = {
       config: {
         bin: 'model2API',
         options: {
-          icon: path.join(process.cwd(), 'main', 'build', 'icon.png'),
+          icon: path.join(process.cwd(), 'src/assets/icon.png'),
         },
       }
     },
@@ -33,7 +33,7 @@ const config: ForgeConfig = {
       name: '@electron-forge/maker-rpm',
       config: {
         bin: 'model2API',
-        icon: path.join(process.cwd(), 'main', 'build', 'icon.png'),
+        icon: path.join(process.cwd(), 'src/assets/icon.png'),
       }
     }
   ],
