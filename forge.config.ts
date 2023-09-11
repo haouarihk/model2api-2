@@ -1,14 +1,40 @@
 import type { ForgeConfig } from '@electron-forge/shared-types';
-import { MakerSquirrel } from '@electron-forge/maker-squirrel';
-import { MakerZIP } from '@electron-forge/maker-zip';
-import { MakerDeb } from '@electron-forge/maker-deb';
-import { MakerRpm } from '@electron-forge/maker-rpm';
 import { VitePlugin } from '@electron-forge/plugin-vite';
+import path from 'path';
 
 const config: ForgeConfig = {
   packagerConfig: {},
   rebuildConfig: {},
-  makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  makers: [
+    {
+      name: '@electron-forge/maker-squirrel',
+      config: {
+        bin: 'model2API'
+      }
+    },
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        bin: 'model2API'
+      }
+    },
+    {
+      name: '@electron-forge/maker-deb',
+      config: {
+        bin: 'model2API',
+        options: {
+          icon: path.join(process.cwd(), 'main', 'build', 'icon.png'),
+        },
+      }
+    },
+    {
+      name: '@electron-forge/maker-rpm',
+      config: {
+        bin: 'Electron Starter',
+        icon: path.join(process.cwd(), 'main', 'build', 'icon.png'),
+      }
+    }
+  ],
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
