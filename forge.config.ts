@@ -4,7 +4,7 @@ import path from 'path';
 
 const config: ForgeConfig = {
   packagerConfig: {
-    asar: true
+    asar: false
   },
   rebuildConfig: {},
   makers: [
@@ -60,11 +60,7 @@ const config: ForgeConfig = {
           config: 'vite.renderer.config.ts',
         },
       ],
-    }),
-    {
-      name: '@electron-forge/plugin-auto-unpack-natives',
-      config: {}
-    }
+    })
   ],
 
   publishers: [
